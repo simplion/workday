@@ -1,0 +1,19 @@
+DEBUG   2016-05-23 16:09:51,505 [main] com.workday.salesforce.utils.ProgrammaticLog4jExample  - this is a debug log message
+INFO    2016-05-23 16:09:51,505 [main] com.workday.salesforce.utils.ProgrammaticLog4jExample  - this is a information log message
+WARN    2016-05-23 16:09:51,505 [main] com.workday.salesforce.utils.ProgrammaticLog4jExample  - this is a warning log message
+ERROR   2016-05-23 16:09:51,505 [main] com.workday.salesforce.utils.ProgrammaticLog4jExample  - this is a warning log messageDEBUG   2016-05-24 09:24:03,066 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a debug log message
+INFO    2016-05-24 09:24:03,081 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a information log message
+WARN    2016-05-24 09:24:03,081 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+ERROR   2016-05-24 09:24:03,081 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+DEBUG   2016-05-25 11:04:11,815 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a debug log message
+DEBUG   2016-05-25 11:04:11,815 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a debug log message
+INFO    2016-05-25 11:04:11,846 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a information log message
+INFO    2016-05-25 11:04:11,846 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a information log message
+WARN    2016-05-25 11:04:11,846 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+WARN    2016-05-25 11:04:11,846 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+ERROR   2016-05-25 11:04:11,846 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+ERROR   2016-05-25 11:04:11,846 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+DEBUG   2016-05-25 11:10:01,435 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a debug log message
+INFO    2016-05-25 11:10:01,435 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a information log message
+WARN    2016-05-25 11:10:01,435 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message
+ERROR   2016-05-25 11:10:01,435 [main] com.workday.salesforce.utils.LogsProgrammatic  - this is a warning log message

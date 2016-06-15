@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="58681" started-at="2016-06-01T16:04:36Z" finished-at="2016-06-01T16:05:34Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="58681" started-at="2016-06-01T16:04:36Z" finished-at="2016-06-01T16:05:34Z">
+      <class name="com.workday.salesforce.tests.TestCases">
+        <test-method status="PASS" signature="tearUp()[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7]" name="tearUp" is-config="true" duration-ms="22526" started-at="2016-06-01T21:34:36Z" finished-at="2016-06-01T21:34:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearUp -->
+        <test-method status="PASS" signature="Perform_Login_And_Verify_HomePage()[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7]" name="Perform_Login_And_Verify_HomePage" duration-ms="29210" started-at="2016-06-01T21:34:58Z" finished-at="2016-06-01T21:35:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Perform_Login_And_Verify_HomePage -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7]" name="tearDown" is-config="true" duration-ms="480" started-at="2016-06-01T21:35:27Z" finished-at="2016-06-01T21:35:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Perform_Login_And_Verify_HomePage status=SUCCESS method=TestCases.Perform_Login_And_Verify_HomePage()[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="Select_Customer_Under_CSODAdmin()[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7]" name="Select_Customer_Under_CSODAdmin" duration-ms="598" started-at="2016-06-01T21:35:28Z" finished-at="2016-06-01T21:35:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Select_Customer_Under_CSODAdmin -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7]" name="tearDown" is-config="true" duration-ms="5808" started-at="2016-06-01T21:35:29Z" finished-at="2016-06-01T21:35:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Select_Customer_Under_CSODAdmin status=SUCCESS method=TestCases.Select_Customer_Under_CSODAdmin()[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.workday.salesforce.tests.TestCases@5e9423f7]" name="tearDown" is-config="true" duration-ms="48" started-at="2016-06-01T21:35:34Z" finished-at="2016-06-01T21:35:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.workday.salesforce.tests.TestCases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
