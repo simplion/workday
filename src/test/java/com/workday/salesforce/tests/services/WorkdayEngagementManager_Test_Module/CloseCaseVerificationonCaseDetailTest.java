@@ -33,6 +33,13 @@ public class CloseCaseVerificationonCaseDetailTest {
 		Assert.assertTrue(tsi.homepage.verify_Home_Page_Loaded());
 	}
 	
+	//@Test(priority=1)
+	public void Perform_Login_And_Verify_HomePage1(){
+		tsi.loginPage.PERFORM_LOGIN_IN_WORKDAY(DataIO.get("userName", "TestData"), DataIO.get("password", "TestData"));
+		Assert.assertTrue(tsi.homepage.verify_Home_Page_Loaded());
+	}
+	
+	
 	@Test(priority=2)
 	public void Create_ServiceCareCaseCreation_Additional_Tenant_Request(){
 		tsi.sccasedetailpage.Click_On_Cases_Tab();
