@@ -48,18 +48,18 @@ public class DataIO {
 	
 	/**
 	 * To Overwrite existing value in properties file.
-	 * @param Property
-	 * @param Data
+	 * @param property
+	 * @param data
 	 * @throws Exception
 	 */
-	public static void overwritePropertiesFile(String Property, String Data) {
+	public static void overwritePropertiesFile(String property, String data, String fileName) {
 		try {
-			FileInputStream in = new FileInputStream(System.getProperty("user.dir") + "\\resources\\testdata\\TestData.properties");
+			FileInputStream in = new FileInputStream(System.getProperty("user.dir") + propertyFilePath.replaceAll("%22%", fileName));
 		  	Properties props = new Properties();
 		  	props.load(in);
 		  	in.close();
-		  	FileOutputStream out = new FileOutputStream(System.getProperty("user.dir") + "\\resources\\testdata\\TestData.properties");
-		  	props.setProperty(Property, Data);
+		  	FileOutputStream out = new FileOutputStream(System.getProperty("user.dir") + propertyFilePath.replaceAll("%22%", fileName));
+		  	props.setProperty(property, data);
 		  	props.store(out, null);
 		  	out.close();
 		} catch (Exception e) {
@@ -83,11 +83,11 @@ public class DataIO {
         }
     }
     
-    public static String updateDataInPropertiesFile(String key, String value){
+    public static String updateDataInPropertiesFile(String key, String value, String fileName){
 		try {
-			overwritePropertiesFile(key, value);
+			overwritePropertiesFile(key, value, fileName);
 		} catch (Exception e) {
-			System.out.println(e);
+			e.printStackTrace();
 		}
 		return value;
 	}

@@ -6,6 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/**
+ * @author nagarwal
+ *
+ */
 public class Locators extends LogsProgrammatic{
 	
 	public WebDriver driver;
@@ -29,33 +33,43 @@ public class Locators extends LogsProgrammatic{
     	
     	locatorValues = DataIO.getValueFromExcelFile(objectName, fileName);
     	if(locatorValues.get(1).trim().equalsIgnoreCase("XPATH")){
-            return By.xpath(locatorValues.get(2).trim().replaceAll("textToReplace", replacement));
+            return By.xpath(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
         }
         //find by class
         else if(locatorValues.get(1).trim().equalsIgnoreCase("CLASSNAME")){
-            return By.className(locatorValues.get(2).trim().replaceAll("textToReplace", replacement));
+            return By.className(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
+             
+        }
+    	 //find by ID
+        else if(locatorValues.get(1).trim().equalsIgnoreCase("ID")){
+        	return By.id(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
              
         }
         //find by name
         else if(locatorValues.get(1).trim().equalsIgnoreCase("NAME")){
-            return By.name(locatorValues.get(2).trim().replaceAll("textToReplace", replacement));
+            return By.name(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
              
         }
         //Find by css
         else if(locatorValues.get(1).trim().equalsIgnoreCase("CSS")){
-            return By.cssSelector(locatorValues.get(2).trim().replaceAll("textToReplace", replacement));
+            return By.cssSelector(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
              
         }
         //find by link
         else if(locatorValues.get(1).trim().equalsIgnoreCase("LINK")){
-            return By.linkText(locatorValues.get(2).trim().replaceAll("textToReplace", replacement));
+            return By.linkText(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
              
         }
         //find by partial link
         else if(locatorValues.get(1).trim().equalsIgnoreCase("PARTIALLINK")){
-            return By.partialLinkText(locatorValues.get(2).trim().replaceAll("textToReplace", replacement));
+            return By.partialLinkText(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
              
+        }else if(locatorValues.get(1).trim().equalsIgnoreCase("LINKTEXT")){
+            return By.linkText(locatorValues.get(2).trim().replaceAll("%txt%", replacement));
+            
         }else
+        	
+        	
         {
             throw new Exception("Wrong object type");
         }
@@ -98,4 +112,3 @@ public class Locators extends LogsProgrammatic{
     	return element;
     }
 }
-

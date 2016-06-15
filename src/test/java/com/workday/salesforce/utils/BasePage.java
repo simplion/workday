@@ -17,7 +17,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-
+/**
+ * @author NeerajAgarwal
+ *
+ */
 public class BasePage extends Locators implements UtilityMethods{
 	WebDriver driver;
 	
@@ -46,6 +49,7 @@ public class BasePage extends Locators implements UtilityMethods{
 
 	public void writeTextInto(String elementName, String fileName, String inputText) {
 		// TODO Auto-generated method stub
+		getElement(elementName, fileName).clear();
 		getElement(elementName, fileName).sendKeys(inputText);
 		
 	}
@@ -114,6 +118,27 @@ public class BasePage extends Locators implements UtilityMethods{
 		}
 		return element;
 	}
+	
+	public void switchToWindow(String string)
+	{
+		// Store the current window handle
+		String winHandleBefore = driver.getWindowHandle();
+
+		// Perform the click operation that opens new window
+
+		// Switch to new window opened
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+
+		// Perform the actions on new window
+
+		// Close the new window, if that window no more required
+		driver.close();
+
+		// Switch back to original browser (first window)
+		driver.switchTo().window(winHandleBefore);
+	}
 
 	protected void switchToFrame(WebElement element) {
 		// switchToDefaultContent();
@@ -122,7 +147,9 @@ public class BasePage extends Locators implements UtilityMethods{
 	}
 
 	public void switchToDefaultContent() {
+		hardWait(1);
 		driver.switchTo().defaultContent();
+		hardWait(1);
 	}
 
 	protected void executeJavascript(String script) {
@@ -219,7 +246,7 @@ public class BasePage extends Locators implements UtilityMethods{
 		dropdown.selectByIndex(index);
 	}
 	
-	public void nevigateToURL(String URL){
+	public void navigateToURL(String URL){
 		driver.navigate().to(URL);
 	}
 
@@ -279,4 +306,26 @@ public class BasePage extends Locators implements UtilityMethods{
 					+ e.getMessage());
 		}
 	}
+	
+	public void switchwindow(String winHandleParent) {
+		try {
+			hardWait(3);
+			for (String winHandleChild : driver.getWindowHandles()) {
+				if (!winHandleChild.contains(winHandleParent)) {
+					driver.switchTo().window(winHandleChild);
+					hardWait(3);
+				}
+			}
+
+		} catch (Exception e) {
+			e.getMessage();
+		}
+
+	}
+
+	public void switchToFramebyIndex(int value){
+		hardWait(1);
+				driver.switchTo().frame(value);
+	}
+
 }

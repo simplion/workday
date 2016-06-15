@@ -5,9 +5,17 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 
-import com.workday.salesforce.actions.BaseActions;
-import com.workday.salesforce.actions.HomePageActions;
-import com.workday.salesforce.actions.LoginPageActions;
+import com.workday.salesforce.actions.services.BaseActions;
+import com.workday.salesforce.actions.services.CsodCreateAggrementLineItemPageAction;
+import com.workday.salesforce.actions.services.CsodHomePageAction;
+import com.workday.salesforce.actions.services.CsodTrainingManagementPageAction;
+import com.workday.salesforce.actions.services.CsodUserManagementPageAction;
+import com.workday.salesforce.actions.services.HomePageActions;
+import com.workday.salesforce.actions.services.LoginPageActions;
+import com.workday.salesforce.actions.services.MarketPlacePageAction;
+import com.workday.salesforce.actions.services.SCCaseAdditionalReducedCostTenantPageAction;
+import com.workday.salesforce.actions.services.SCCaseAdditionalTenantRequestPageAction;
+import com.workday.salesforce.actions.services.SCCaseDetailPageAction;
 import com.workday.salesforce.utils.BasePage;
 
 /**
@@ -27,14 +35,32 @@ public class TestSessionInitiator{
 	public HomePageActions homepage = null;
 	public BaseActions baseAction = null;
 	public LoginPageActions loginPage = null;
+	public MarketPlacePageAction marketPlace=null;
+	public SCCaseAdditionalTenantRequestPageAction serivicecareatr=null;
+	public SCCaseAdditionalReducedCostTenantPageAction servicecarerct=null;
+	public SCCaseDetailPageAction sccasedetailpage=null;
+	public CsodHomePageAction csodhomepage=null;
+	public CsodUserManagementPageAction usermgmtpage=null;
+	public CsodTrainingManagementPageAction trainingmgmtpage=null;
+	public CsodCreateAggrementLineItemPageAction aggrementlineitempage=null;
+	
 	
 	/**
 	 * Initialize all the page objects for all action classes
 	 */
-	private void _initActions(){
+	private void _initActions()
+	{
 		homepage = new HomePageActions(driver);
 		baseAction = new BaseActions(driver);
 		loginPage = new LoginPageActions(driver);
+		marketPlace = new MarketPlacePageAction(driver);
+		serivicecareatr =new SCCaseAdditionalTenantRequestPageAction(driver);
+		servicecarerct = new SCCaseAdditionalReducedCostTenantPageAction (driver);
+		sccasedetailpage=new SCCaseDetailPageAction(driver);
+		csodhomepage = new CsodHomePageAction(driver);
+		usermgmtpage=new CsodUserManagementPageAction(driver);
+		trainingmgmtpage=new CsodTrainingManagementPageAction(driver);
+		aggrementlineitempage=new CsodCreateAggrementLineItemPageAction(driver);
 	}
 	
 	/**
@@ -49,7 +75,7 @@ public class TestSessionInitiator{
 	 * This method is to configure the browser setting.
 	 */
 	private void _browserConfig(){
-		driver = wdf.getBrowser("firefox");	
+		driver = wdf.getBrowser();	
 		driver.manage().deleteAllCookies();
 		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt("15"), TimeUnit.SECONDS);

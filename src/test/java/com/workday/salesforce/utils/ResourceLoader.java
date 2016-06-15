@@ -9,7 +9,7 @@ import java.net.URL;
 import java.util.Properties;
 
 /**
- * @author Neeraj Agarwal
+ * @author NeerajAgarwal
  *
  */
 public class ResourceLoader {
