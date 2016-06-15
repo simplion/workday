@@ -24,7 +24,8 @@ public class CloseCaseVerificationonCaseDetailTest {
 	@AfterClass
 	public void tearDown(){
 		System.out.println("Test case has been executed successfully");
-//		tsi.close();
+
+		tsi.close();
 	}
 	
 	@Test(priority=1)
@@ -33,6 +34,7 @@ public class CloseCaseVerificationonCaseDetailTest {
 		Assert.assertTrue(tsi.homepage.verify_Home_Page_Loaded());
 	}
 	
+
 	@Test(priority=2)
 	public void Create_ServiceCareCaseCreation_Additional_Tenant_Request(){
 		tsi.sccasedetailpage.Click_On_Cases_Tab();
